@@ -4,7 +4,7 @@ const { authClient, authAdmin } = require('./middlewares/AuthAdmin');
 const { saveLead, getLeads } = require('./controllers/LeadController');
 const {ping} = require('./controllers/ConnectionController');
 
-routes.get('/ping', ping);
+routes.get('/ping', authClient, ping);
 
 routes.post('/lead', authClient, saveLead);
 routes.get('/lead', authAdmin, getLeads);
