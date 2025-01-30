@@ -8,6 +8,13 @@ const leadsTable = pgTable('leads', {
   createdAt: timestamp('createdAt').defaultNow()
 });
 
+const enrollmentsTable = pgTable('enrollments', {
+  id: serial('id').primaryKey(),
+  content: text('content').notNull(),
+  createdAt: timestamp('createdAt').defaultNow()
+})
+
 module.exports = {
     leadsTable,
+    enrollmentsTable
 }

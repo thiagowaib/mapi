@@ -15,6 +15,13 @@
       "when": 1736211969700,
       "tag": "0001_short_reptil",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738195983493,
+      "tag": "0002_clumsy_diamondback",
+      "breakpoints": true
     }
   ]
 }

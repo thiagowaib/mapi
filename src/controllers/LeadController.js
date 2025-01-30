@@ -5,9 +5,9 @@ const saveLead = async (req, res) => {
     const {name, contact, email} = req.body;
     try{
         await db.insert(leadsTable).values({name, contact, email });
-        res.status(201).send();
+        return res.status(201).send();
     } catch (e) {
-        res.status(400).send();
+        return res.status(400).send();
     }
 }
 
