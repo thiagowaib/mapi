@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';
 
 const sendMessageEnrollment = async (content) => {
-    let message = "Nova aplicação para a Consultoria Eleva!\n\n";
+    let message = "<b>Nova aplicação para a Consultoria Eleva!</b>\n\n";
     content.forEach(item => {
-        message += `>> **${item.question}** \n`;
+        message += `<b>>> ${item.question}</b> \n`;
         message += `- ${item.answer}\n\n`;
     });
     await sendMessage(message.trim(), process.env.TELEGRAM_CHAT_ENROLLMENT); 
@@ -19,6 +19,7 @@ const sendMessage = async (message, chat) => {
         body: JSON.stringify({
             chat_id: chat,
             text: message,
+            parse_mode: 'HTML'
         }),
     });
 
