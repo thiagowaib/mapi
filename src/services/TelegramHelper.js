@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const sendMessageEnrollment = async (content) => {
     let message = "Nova aplicação para a Consultoria Eleva!\n\n";
     content.forEach(item => {
-        message += `>> ${item.question}\n`;
+        message += `>> **${item.question}** \n`;
         message += `- ${item.answer}\n\n`;
     });
     await sendMessage(message.trim(), process.env.TELEGRAM_CHAT_ENROLLMENT); 
