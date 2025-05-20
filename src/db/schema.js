@@ -14,7 +14,14 @@ const enrollmentsTable = pgTable('enrollments', {
   createdAt: timestamp('createdAt').defaultNow()
 })
 
+const confirmationsTable = pgTable('confirmations', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  createdAt: timestamp('createdAt').defaultNow()
+})
+
 module.exports = {
     leadsTable,
-    enrollmentsTable
+    enrollmentsTable,
+    confirmationsTable
 }

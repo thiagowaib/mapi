@@ -1,6 +1,6 @@
 const db = require('../db');
 const { enrollmentsTable } = require('../db/schema');
-const {sendMessageEnrollment} = require('../services/TelegramHelper').default;
+const {sendMessageEnrollment} = require('../services/TelegramHelper');
 
 const saveEnrollment = async (req, res) => {
     const content = JSON.stringify(req.body);

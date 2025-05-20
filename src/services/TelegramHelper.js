@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 const sendMessageEnrollment = async (content) => {
     let message = "<b>Nova aplicação para a Consultoria Eleva!</b>\n\n";
     content.forEach(item => {
@@ -7,6 +5,11 @@ const sendMessageEnrollment = async (content) => {
         message += `- ${item.answer}\n\n`;
     });
     await sendMessage(message.trim(), process.env.TELEGRAM_CHAT_ENROLLMENT); 
+}
+
+const sendMessageConfirmation = async (name) => {
+    let message = `<b>Nova confirmação de presença:</b>\n• ${name}`;
+    await sendMessage(message.trim(), process.env.TELEGRAM_CHAT_CONFIRMATION)
 }
 
 const sendMessage = async (message, chat) => {
@@ -27,6 +30,7 @@ const sendMessage = async (message, chat) => {
     return result;
 }
 
-export default {
-    sendMessageEnrollment
+module.exports = {
+    sendMessageEnrollment,
+    sendMessageConfirmation
 }
